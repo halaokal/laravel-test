@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2; /* Background color for the page */
+    padding: 20px; /* Add some padding for better readability */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff; /* Background color for the form container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for a better visual effect */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="email"] {
+    width: calc(100% - 20px); /* Adjust input width */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button.deletebtn,
+.btn {
+    width: calc(100% - 20px); /* Adjust button width */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+button.deletebtn:hover,
+.btn:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    margin-top: 30px; /* Add some margin between the form and the table */
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden; /* Hide overflowing content */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for a better visual effect */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}

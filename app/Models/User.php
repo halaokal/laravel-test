@@ -10,7 +10,10 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    public $timestamps = false;
     use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+
 
     /**
      * The attributes that are mass assignable.
@@ -18,9 +21,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'lastname',
         'email',
         'password',
+        'gender',
+        'country',
+        'zipcode',
+        'role'
     ];
 
     /**
@@ -42,4 +50,25 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function createdMatches()
+    {
+        return $this->hasMany(MatchModel::class, 'trainer_id');
+    }
+
+    public function assignedMatches()
+    {
+        return $this->belongsToMany(MatchModel::class, 'match_user')->withPivot('role')->wherePivot('role', 0);
+    }
+///////////// JWT middleware
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+
 }
